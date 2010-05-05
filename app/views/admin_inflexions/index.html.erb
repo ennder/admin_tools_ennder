@@ -1,0 +1,38 @@
+<h1>Liste des inflexions</h1>
+
+pluriel de categorie: <%= "categorie".pluralize %><br/>
+singulier de categories: <%= "categories".singularize %><br/>
+<br/>
+
+<table border="2">
+<thead>
+	<th>r&egrave;gle</th><th>remplacement</th>
+</thead>
+
+<tr>
+	<th colspan="2">pluriel</th>
+</tr>
+<%  ActiveSupport::Inflector.inflections.plurals.each { |(rule, replacement)| %>
+<tr>
+	<td><%= rule %></td><td><%= replacement %></td>
+</tr>
+<% } %>
+</table>
+
+<br/>
+
+<table border="2">
+<thead>
+	<th>r&egrave;gle</th><th>remplacement</th>
+</thead>
+<tr>
+	<th colspan="2">singulier</th>
+</tr>
+<%  ActiveSupport::Inflector.inflections.singulars.each { |(rule, replacement)| %>
+<tr>
+	<td><%= rule %></td><td><%= replacement %></td>
+</tr>
+<% } %>
+
+</table>
+

@@ -1,0 +1,25 @@
+<table border="2">
+<thead>
+	<th colspan="3">Routes</th>
+</thead>
+<%
+	ActionController::Routing::Routes.routes.each_with_index { |r, i|
+%>
+<tr>
+	<td><%= i %></td><td colspan="2"><%= r %></td>
+</tr>
+<% } %>
+
+<thead>
+	<th colspan="3">Routes nommées</th>
+</thead>
+<%
+	ActionController::Routing::Routes.named_routes.routes.each_with_index { |name_route, i|
+%>
+<tr>
+	<td><%= i %></td><td><%= name_route[0] %></td><td><%= name_route[1] %></td>
+</tr>
+<%
+	}
+%>
+</table>

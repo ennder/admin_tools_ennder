@@ -1,0 +1,25 @@
+<%= link_to 'Retour au menu d\'administartion', :controller => :admin_menu %><br/>
+<br/>
+<br/>
+<%= link_to 'Nouvelle commande', new_command_path %><br/>
+<br/>
+[<%= @commands_nb %>] commande(s)<br/>
+
+<br/>
+<%#= will_paginate @commands %><br/>
+
+<table>
+<tr>
+  <th>Commande</th>
+  <th>Executée à</th>
+  <th>actions</th>
+</tr>
+
+<% for _command in @commands %>
+<tr>
+  <td><%=h _command.execute %></td>
+  <td><%=h _command.created_at %></td>
+  <td><%= link_to 'Voir', _command %> | <%= link_to 'Supprimer', _command, :confirm => 'Êtes vous sur(e)?', :method => :delete %></td>
+</tr>
+<% end %>
+</table>

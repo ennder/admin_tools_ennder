@@ -1,0 +1,17 @@
+<%= link_to 'Historique des commandes', commands_path %>
+<br/>
+<% form_for(@command) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.text_field :execute %>
+  </p>
+  <p>
+    <%= f.submit 'Execute' %>
+  </p>
+<% end %>
+
+<pre>
+  <%=h @command_result %>
+</pre>
+

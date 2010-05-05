@@ -1,0 +1,8 @@
+<%= link_to 'Retour au menu', :controller => :admin_menu %><br/>
+<br/>
+
+<% form_tag :action => 'show' do %>
+	<fieldset>
+		<p>Nom de l'objet : <%= text_field_tag :nom_objet %>&nbsp;<%= submit_tag 'Inspecter' %></p>
+	</fieldset>
+<% end %>

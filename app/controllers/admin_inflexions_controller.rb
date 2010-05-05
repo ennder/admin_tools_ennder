@@ -1,0 +1,2 @@
+class AdminInflexionsController < ApplicationController
+end

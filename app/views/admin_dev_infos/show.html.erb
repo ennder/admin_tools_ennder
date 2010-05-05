@@ -1,0 +1,43 @@
+<%= link_to 'Retour au menu', :controller => :admin_menu %><br/>
+<br/>
+
+<% if defined? @l_objet %>
+<h1>Infos sur <% @l_objet.class.name %> (<%= @l_objet.class.superclass %>)</h1>
+
+
+<table border="2">
+<thead>
+	<th>ancêtres (<%= @l_objet.class.ancestors.size %>)</th>
+</thead>
+
+<%  @l_objet.class.ancestors.each { |ancetre| %>
+<tr>
+	<td><%= ancetre %></td>
+</tr>
+<%	} %>
+
+
+<thead>
+	<th>méthodes publiques (<%= @l_objet.public_methods.size %>)</th>
+</thead>
+
+<%  @l_objet.public_methods.sort.each { |methode| %>
+<%
+		methode_3_fin = methode[-4..-1]
+		if methode_3_fin == '_ids' then
+			b_deb = '<b>'
+			b_fin = '</b> (méthode dynamique)'
+		else
+			b_deb = ''
+			b_fin = ''
+		end
+%>
+<tr>
+	<td><%= b_deb + methode + b_fin %></td>
+</tr>
+<%	} %>
+</table>
+<% else %>
+L'objet <%= params[:nom_objet] %> n'existe PAS !
+<% end %>
+

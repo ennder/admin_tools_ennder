@@ -1,0 +1,2 @@
+class AdminRoutesInfosController < ApplicationController
+end

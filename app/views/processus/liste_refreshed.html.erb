@@ -1,0 +1,7 @@
+<%= javascript_include_tag 'prototype' %>
+
+<h1>Liste des Processus</h1>
+
+<pre id="processus" style="width:100%; overflow:scroll">Collecte des informations...</pre>
+
+<%= periodically_call_remote :url => "/admin/processus_liste", :update => "processus", :frequency => 1, :method => :get %>

@@ -1,0 +1,12 @@
+AdminTools
+==========
+
+plugin à inclure pour ajouter des pages d'admin
+2010-05-05
+
+Example
+=======
+
+Ajouter une route vers le controlleur admin_menu
+
+Copyright (c) 2010 [Jérôme BATAILLE], released under the MIT license
