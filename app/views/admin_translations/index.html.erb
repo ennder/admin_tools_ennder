@@ -1,0 +1,127 @@
+<h1>Liste des traductions</h1>
+
+Locale(s) disponible(s) :<%= I18n.available_locales.collect{ |_locale| '&nbsp;' + _locale.to_s } %><br/>
+<br/>
+
+<table border="2">
+<thead>
+	<th>clé</th><th>traduction</th>
+</thead>
+
+<%
+	_traductions_toutes=I18n.backend.send(:translations)
+
+	#Pour chaque locale
+	_traductions_toutes.each { |_locale, _traductions_locale|
+%>
+<tr>
+	<th colspan="2">&nbsp;</th>
+</tr>
+<tr>
+	<th colspan="2" style="text-align: left"><%= _traductions_locale.size %> traduction(s) pour <%= _locale %></th>
+</tr>
+<%
+		#Bloc de traduction pour la locale
+		_traductions_locale.each { |_bloc, _traductions_bloc|
+%>
+<tr>
+	<th colspan="2" style="text-align: left">Bloc <%= _bloc %> [<%= _traductions_bloc.size %>] Traduction(s)</th>
+</tr>
+<%
+			if _traductions_bloc.is_a?(Hash)
+				#Un bloc contenant une table de hachage
+
+				_traductions_bloc.each { |_sous_bloc, _traductions_sous_bloc|
+
+					if _traductions_sous_bloc.is_a?(Hash)
+					#Un sous-bloc contenant une table de hachage
+
+%>
+<tr>
+	<th colspan="2" style="text-align: left">&nbsp;&nbsp;> Sous-Bloc <%= _sous_bloc %> [<%= _traductions_sous_bloc.size %>] Traduction(s)</th>
+</tr>
+<%
+						_traductions_sous_bloc.each { |_sous_sous_bloc, _traductions_sous_sous_bloc|
+
+							if _traductions_sous_sous_bloc.is_a?(Hash)
+								#Un sous-sous-bloc contenant une table de hachage
+%>
+<tr>
+	<th colspan="2" style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;>> Sous-Sous-Bloc <%= _sous_sous_bloc %> [<%= _traductions_sous_sous_bloc.size %>] Traduction(s)</th>
+</tr>
+<%
+								_traductions_sous_sous_bloc.each { |_sous_sous_sous_bloc, _traductions_sous_sous_sous_bloc|
+
+									if _traductions_sous_sous_sous_bloc.is_a?(Hash)
+										#Un sous-sous-sous-bloc contenant une table de hachage
+%>
+<tr>
+	<th colspan="2" style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>>> Sous-Sous-Sous-Bloc <%= _sous_sous_sous_bloc %> [<%= _traductions_sous_sous_sous_bloc.size %>] Traduction(s)</th>
+</tr>
+<%
+										_traductions_sous_sous_sous_bloc.each { |_cle, _traduction|
+%>
+<tr>
+	<td><%= _cle %></td><td><%= _traduction %></td>
+</tr>
+<%
+										}
+									elsif _traductions_sous_sous_sous_bloc.is_a?(Array)
+										#Un sous-sous-sous-bloc contenant un tableau
+%>
+<tr>
+	<td><%= _sous_sous_sous_bloc %></td><td><%= _traductions_sous_sous_sous_bloc.join('<br/>') %></td>
+</tr>
+<%
+									else
+										#Un sous-sous-sous-bloc contenant une traduction simple
+%>
+<tr>
+	<td><%= _sous_sous_sous_bloc %></td><td><%= _traductions_sous_sous_sous_bloc %></td>
+</tr>
+<%
+									end
+								} #FIN - sous-sous-sous-bloc
+							elsif _traductions_sous_sous_bloc.is_a?(Array)
+								#Un sous-sous-bloc contenant un tableau
+%>
+<tr>
+	<td><%= _sous_sous_bloc %></td><td><%= _traductions_sous_sous_bloc.join('<br/>') %></td>
+</tr>
+<%
+							else
+								#Un sous-sous-bloc contenant une traduction simple
+%>
+<tr>
+	<td><%= _sous_sous_bloc %></td><td><%= _traductions_sous_sous_bloc %></td>
+</tr>
+<%
+							end
+						} #FIN - sous-sous-bloc
+					elsif _traductions_sous_bloc.is_a?(Array)
+						#Un sous-bloc contenant un tableau
+%>
+<tr>
+	<td><%= _sous_bloc %></td><td><%= _traductions_sous_bloc.join('<br/>') %></td>
+</tr>
+<%
+					else
+						#Un sous-bloc contenant une traduction simple
+%>
+<tr>
+	<td><%= _sous_bloc %></td><td><%= _traductions_sous_bloc %></td>
+</tr>
+<%
+					end
+				} #FIN - sous-bloc
+			else
+%>
+<tr>
+	<td><%= _bloc %></td><td><%= _traductions_bloc %></td>
+</tr>
+<%
+			end
+		} #FIN - bloc
+	} #FIN - Pour chaque locale
+%>
+</table>
