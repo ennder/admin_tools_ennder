@@ -1,0 +1,8 @@
+<%= link_to 'Retour au menu', :controller => :admin_menu %><br/>
+<br/>
+
+<% form_tag :action => 'download' do %>
+	<fieldset>
+		<p>Chemin du fichier à télécharger : <%= text_field_tag :chemin %>&nbsp;<%= submit_tag 'Télécharger' %></p>
+	</fieldset>
+<% end %>
