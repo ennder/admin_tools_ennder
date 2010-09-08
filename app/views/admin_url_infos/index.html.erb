@@ -32,6 +32,7 @@
 
 <p>
     <b>xhr?</b> - Returns true if the request is an AJAX request.<br/>
+	[<%=h request.xhr? %>]
 </p>
 
 <p>
@@ -71,10 +72,10 @@
 
 <p>
     <b>ssl?</b> - Returns true if it's an HTTPS / SSL request.<br/>
-	[<%=h request.url %>]
+	[<%=h request.ssl? %>]
 </p>
 
 <p>
-    <b>request.subdomains</b> - Returns an array of subdomains that you could use as part of your authentication scheme.<br/>
-	[<%=h request.url %>]
+    <b>subdomains</b> - Returns an array of subdomains that you could use as part of your authentication scheme.<br/>
+	[<%=h request.subdomains %>]
 </p>
