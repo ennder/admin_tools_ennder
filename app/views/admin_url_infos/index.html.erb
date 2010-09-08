@@ -31,6 +31,10 @@
 </p>
 
 <p>
+    <b>xhr?</b> - Returns true if the request is an AJAX request.<br/>
+</p>
+
+<p>
     <b>headers</b> - Returns a hash containing the headers associated with the request.<br/>
 	[<%=h request.headers %>]
 </p>
@@ -57,5 +61,20 @@
 
 <p>
     <b>url</b> - The entire URL used for the request.<br/>
+	[<%=h request.url %>]
+</p>
+
+<p>
+    <b>request_uri</b> - Returns the full local request URL.<br/>
+	[<%=h request.uri %>]
+</p>
+
+<p>
+    <b>ssl?</b> - Returns true if it's an HTTPS / SSL request.<br/>
+	[<%=h request.url %>]
+</p>
+
+<p>
+    <b>request.subdomains</b> - Returns an array of subdomains that you could use as part of your authentication scheme.<br/>
 	[<%=h request.url %>]
 </p>
