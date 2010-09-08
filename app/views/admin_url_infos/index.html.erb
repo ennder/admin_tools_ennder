@@ -1,0 +1,61 @@
+<%= link_to 'Retour au menu', :controller => :admin_menu %><br/>
+<br/>
+
+<p>
+    host - The hostname used for this request.<br/>
+	[<%=h request.host %>]
+</p>
+
+<p>
+    domain - The hostname without the first part (usually "www").<br/>
+	[<%=h request.domain %>]
+</p>
+
+<p>
+    format - The content type requested by the client.<br/>
+	[<%=h request.format %>]
+</p>
+
+<p>
+    method - The HTTP method used for the request.<br/>
+	[<%=h request.method %>]
+</p>
+
+<p>
+    get?, post?, put?, delete?, head? - Returns true if the HTTP method is get/post/put/delete/head.<br/>
+	[<%=h request.get? %>]<br/>
+	[<%=h request.post? %>]<br/>
+	[<%=h request.put? %>]<br/>
+	[<%=h request.delete? %>]<br/>
+	[<%=h request.head? %>]
+</p>
+
+<p>
+    headers - Returns a hash containing the headers associated with the request.<br/>
+	[<%=h request.headers %>]
+</p>
+
+<p>
+    port - The port number (integer) used for the request.<br/>
+	[<%=h request.port %>]
+</p>
+
+<p>
+    protocol - The protocol used for the request.<br/>
+	[<%=h request.protocol %>]
+</p>
+
+<p>
+    query_string - The query string part of the URL - everything after "?".<br/>
+	[<%=h request.query_string %>]
+</p>
+
+<p>
+    remote_ip - The IP address of the client.<br/>
+	[<%=h request.remote_ip %>]
+</p>
+
+<p>
+    url - The entire URL used for the request.<br/>
+	[<%=h request.url %>]
+</p>
