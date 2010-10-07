@@ -17,7 +17,7 @@ class AdminDevInfosController < ApplicationController
 
 		_La_classe = Object::const_get(params[:nom_objet])
 
-		if ! _La_classe.respnd_to?(:new)
+		if ! _La_classe.respond_to?(:new)
 			flash[:notice] = "La Classe #{_La_classe} ne fournit pas la méthode new()"
 			redirect_to( :action => :index )
 
