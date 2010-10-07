@@ -7,13 +7,18 @@ class AdminDevInfosController < ApplicationController
 			return
 		end
 
-		begin
-			_La_classe = Object::const_get(params[:nom_objet])
-		rescue
+
+		if ! Object.const_defined?(params[:nom_objet])
+			flash[:notice] = "La Classe #{params[:nom_objet]} n'existe pas"
+			redirect_to( :action => :index )
+
+			return
 		end
 
-		if _La_classe.nil?
-			flash[:notice] = "La Classe #{params[:nom_objet]} n'existe pas"
+		_La_classe = Object::const_get(params[:nom_objet])
+
+		if ! _La_classe.respnd_to?(:new)
+			flash[:notice] = "La Classe #{_La_classe} ne fournit pas la méthode new()"
 			redirect_to( :action => :index )
 
 			return
