@@ -1,6 +1,6 @@
 class AdminDevInfosController < ApplicationController
 	def show
-		if params[:nom_objet]?blank?
+		if params[:nom_objet].blank?
 			flash[:notice] = 'Il faut spécifier un nom de Classe'
 			redirect_to( :action => :index )
 
@@ -21,5 +21,4 @@ class AdminDevInfosController < ApplicationController
 			format.html # show.html.erb
 		end
 	end
-
 end
