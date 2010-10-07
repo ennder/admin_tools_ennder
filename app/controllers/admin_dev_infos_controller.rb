@@ -10,7 +10,7 @@ class AdminDevInfosController < ApplicationController
 		_defini = false
 		begin
 			#Exceptions enterrées
-			_defini = Object.const_defined?(params[:nom_objet]
+			_defini = Object.const_defined?(params[:nom_objet])
 		rescue
 		end
 
