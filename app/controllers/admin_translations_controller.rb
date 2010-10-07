@@ -1,10 +1,9 @@
 class AdminTranslationsController < ApplicationController
-	def show
+	def index
 		@traductions_all = I18n.backend.send(:translations)
 
 		respond_to do |format|
-			format.html # show.html.erb
+			format.html # index.html.erb
 		end
 	end
-
 end
