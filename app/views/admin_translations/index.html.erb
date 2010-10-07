@@ -9,10 +9,8 @@ Locale(s) disponible(s) [<%= I18n.available_locales.size %>] :<%= I18n.available
 </thead>
 
 <%
-	_traductions_toutes=I18n.backend.send(:translations)
-
 	#Pour chaque locale
-	_traductions_toutes.each { |_locale, _traductions_locale|
+	@traductions_all.each { |_locale, _traductions_locale|
 %>
 <tr>
 	<th colspan="2">&nbsp;</th>
