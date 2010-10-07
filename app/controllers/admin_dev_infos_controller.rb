@@ -7,8 +7,14 @@ class AdminDevInfosController < ApplicationController
 			return
 		end
 
+		_defini = false
+		begin
+			#Exceptions enterrées
+			_defini = Object.const_defined?(params[:nom_objet]
+		rescue
+		end
 
-		if ! Object.const_defined?(params[:nom_objet])
+		if ! _defini
 			flash[:notice] = "La Classe #{params[:nom_objet]} n'existe pas"
 			redirect_to( :action => :index )
 
