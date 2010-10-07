@@ -7,7 +7,11 @@ class AdminDevInfosController < ApplicationController
 			return
 		end
 
-		_La_classe = Object::const_get(params[:nom_objet])
+		begin
+			_La_classe = Object::const_get(params[:nom_objet])
+		rescue
+		end
+
 		if _La_classe.nil?
 			flash[:notice] = "La Classe #{params[:nom_objet]} n'existe pas"
 			redirect_to( :action => :index )
