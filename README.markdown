@@ -18,10 +18,13 @@ Transformé en gem
 * Liste des inflexions
 * Liste des traductions
 * Liste des routes<br/>
+<br/>
 * Liste des processus du serveur
 * Liste des processus du serveur (metal)<br/>  
+<br/>
 * Infos de developpement
 * Infos de l'Url courante<br/>
+<br/>
 * Execution de commandes shell
 * Télécharger un fichier
 
