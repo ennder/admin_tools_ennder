@@ -8,23 +8,20 @@ Plugin créé le 2010-05-05
 2. Ajoute tous les sous-menus de cette page
 
 2010-09-08  
-	La page de menu a pour Url : /admin_menu (route automatique : **admin_menu_url**)
+La page de menu a pour Url : /admin_menu (route automatique : **admin_menu_url**)
 
 2010-12-31  
-	Transformé en gem  
+Transformé en gem  
 
 **Menu**
 
 * Liste des inflexions
 * Liste des traductions
 * Liste des routes  
-
 * Liste des processus du serveur
 * Liste des processus du serveur (metal)  
-
 * Infos de developpement
 * Infos de l'Url courante  
-
 * Execution de commandes shell
 * Télécharger un fichier
 
