@@ -17,14 +17,11 @@ Transformé en gem
 
 * Liste des inflexions
 * Liste des traductions
-* Liste des routes  
-
+* Liste des routes<br/>
 * Liste des processus du serveur
-* Liste des processus du serveur (metal)  
-
+* Liste des processus du serveur (metal)<br/>  
 * Infos de developpement
-* Infos de l'Url courante  
-
+* Infos de l'Url courante<br/>
 * Execution de commandes shell
 * Télécharger un fichier
 
