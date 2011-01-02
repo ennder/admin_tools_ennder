@@ -12,6 +12,6 @@ Bones {
   name  'admin_tools_ennder'
   authors  'Ennder'
   email    'mel@ennder.fr'
-  url      'www.ennder.fr'
+  url      'http://www.ennder.fr'
 }
 
