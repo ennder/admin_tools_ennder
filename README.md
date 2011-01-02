@@ -26,7 +26,8 @@ La page de menu a pour Url : /admin_menu (route automatique : **admin_menu_url**
 * Execution de commandes shell
 * Télécharger un fichier
 
-Unsolved problems : NONE
+Unsolved problems :  
+No tests developped
 
 Examples
 --------
@@ -53,7 +54,7 @@ License
 
 (The MIT License)
 
-Copyright (c) 2011 Ennder
+Copyright (c) 2010-2011 Ennder
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -74,5 +75,3 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Plugin créé le 2010-05-05
-Copyright (c) 2010-2011 [Jérôme BATAILLE], released under the MIT license
