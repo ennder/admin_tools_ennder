@@ -6,6 +6,7 @@
 
 == 0.9.9 / 2010-12-31
 * Posé sur GitHub
+git remote add origin git@github.com:Utopism/admin_tools_ennder.git
 
 == 1.0.0 / 2011-01-02
 
