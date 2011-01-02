@@ -1,2 +1,0 @@
-class AdminRoutesInfosController < ApplicationController
-end
