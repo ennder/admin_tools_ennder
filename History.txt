@@ -17,3 +17,6 @@ git remote add origin git@github.com:Utopism/admin_tools_ennder.git
 
 * Ajout dynamique des nouvelles routes
 * Renommage de la page admin_routes_infos en admin_routes
+
+== 1.1.1 / 2011-01-03
+* Déplacement de routes_custom.rb dans lib/config
