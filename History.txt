@@ -20,3 +20,6 @@ git remote add origin git@github.com:Utopism/admin_tools_ennder.git
 
 == 1.1.1 / 2011-01-03
 * Déplacement de routes_custom.rb dans lib/config
+
+== 1.1.2 / 2011-01-03
+* Correction erreur dans le menu
