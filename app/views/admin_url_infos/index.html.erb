@@ -72,7 +72,9 @@
 
 <p>
     <b>request_uri</b> - Returns the full local request URL.<br/>
-	[<%=h request.request_uri %>]
+	[<%=h request.request_uri %>]<br/>
+	Avec Rails 3 :<br/>
+	[<%=h request.fullpath %>]
 </p>
 
 <p>
