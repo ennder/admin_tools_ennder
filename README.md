@@ -37,7 +37,8 @@ Examples
 Requirements
 ------------
 
-Rails 2.3 or greater
+- Rails 2.3 or greater
+- gem Open4 pour l'execution des commandes
 
 Install
 -------
