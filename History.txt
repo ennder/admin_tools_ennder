@@ -29,3 +29,6 @@ git remote add origin git@github.com:Utopism/admin_tools_ennder.git
 
 == 1.1.4 / 2011-02-03
 * execution de commande, infos stderr
+
+== 1.1.5 / 2011-02-04
+* correction erreur sur précédente évolution

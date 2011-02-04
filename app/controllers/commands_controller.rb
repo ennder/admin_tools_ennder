@@ -51,7 +51,7 @@ class CommandsController < ApplicationController
 #				@command_result = %x[#{@command.execute.to_s}]
 				pid, stdin, stdout, stderr = Open4::popen4 @command.execute.to_s
 				@command_result = stdout.read.strip
-				@command_error =  = stderr.read.strip
+				@command_error = stderr.read.strip
 
 				@command = Command.new
 				format.html { render :action => "new" }
