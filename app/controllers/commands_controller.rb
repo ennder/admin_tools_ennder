@@ -49,9 +49,7 @@ class CommandsController < ApplicationController
 
 			if _result
 #				@command_result = %x[#{@command.execute.to_s}]
-				pid, stdin, stdout, stderr = Open4::popen4 @command.execute.to_s
-				@command_result = stdout.read.strip
-				@command_error = stderr.read.strip
+				execute_command
 
 				@command = Command.new
 				format.html { render :action => "new" }
@@ -60,6 +58,18 @@ class CommandsController < ApplicationController
 				format.html { redirect_to(@command) }
 				format.xml	{ render :xml => @command.errors, :status => :unprocessable_entity }
 			end
+		end
+	end
+
+	# GET /commands/1/execute
+	# GET /commands/1/execute.xml
+	def execute
+		@command = Command.find(params[:id])
+		execute_command
+
+		respond_to do |format|
+			format.html { render :action => "show" }
+			format.xml	{ render :xml => @command }
 		end
 	end
 
@@ -76,11 +86,21 @@ class CommandsController < ApplicationController
 	end
 
 	
-	private
+private
 
 	def authenticate
 		authenticate_or_request_with_http_basic do |name, password|
 			name == 'admin' && password == 'ttooume'
+		end
+	end
+	
+	def execute_command
+		begin
+			pid, stdin, stdout, stderr = Open4::popen4 @command.execute.to_s
+			@command_result = stdout.read.strip
+			@command_error = stderr.read.strip
+		rescue Exception => e
+			@command_error = "Exception: #{e.inspect}"
 		end
 	end
 end
