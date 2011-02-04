@@ -12,6 +12,6 @@ ActionController::Routing::Routes.draw do |map|
 	map.admin '/admin/dev_infos',		:controller => 'admin_dev_infos'
 	map.admin '/admin/url_infos',		:controller => 'admin_url_infos'
 
-	map.admin '/admin/commands',		:controller => 'commands'
+	map.admin '/admin/commands',		:controller => 'commands', :member => { :execute => :get }
 	map.admin '/admin/send_file',		:controller => 'admin_send_file'
 end
