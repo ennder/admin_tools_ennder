@@ -19,7 +19,7 @@
 <tr>
   <td><%=h _command.execute %></td>
   <td><%=h _command.created_at %></td>
-  <td><%= link_to 'Voir', _command %> | <%= link_to 'Supprimer', _command, :confirm => 'Êtes vous sur(e)?', :method => :delete %></td>
+  <td><%= link_to 'Voir', _command %> | <%= link_to 'Supprimer', _command, :confirm => 'Êtes vous sur(e)?', :method => :delete %> | <%= link_to 'Executer', command_execute_path %> </td>
 </tr>
 <% end %>
 </table>
