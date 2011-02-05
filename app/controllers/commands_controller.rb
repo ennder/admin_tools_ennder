@@ -65,10 +65,21 @@ class CommandsController < ApplicationController
 	# GET /commands/1/execute.xml
 	def execute
 		@command = Command.find(params[:id])
+
+		respond_to do |format|
+			format.html { render :action => "executed" }
+			format.xml	{ render :xml => @command }
+		end
+	end
+
+	# GET /commands/1/executed
+	# GET /commands/1/executed.xml
+	def executed
+		@command = Command.find(params[:id])
 		execute_command
 
 		respond_to do |format|
-			format.html { render :action => "show" }
+			format.html { render :action => "execute" }
 			format.xml	{ render :xml => @command }
 		end
 	end

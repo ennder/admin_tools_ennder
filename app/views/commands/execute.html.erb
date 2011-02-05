@@ -1,10 +1,10 @@
 <%= link_to 'Retour au menu', :controller => :admin_menu %><br/>
 <br/>
-<%= link_to 'Autre', new_command_path %> |
+<%= link_to 'Nouvelle', new_command_path %> |
 <%= link_to 'Historique des commandes', commands_path %> |
 <%= link_to 'Executer', execute_command_path(@command) %>
 
 <p>
-  <b>Commande déjà exécutée :</b>
+  <b>Commande à executer :</b>
   <%=h @command.execute %>
 </p>

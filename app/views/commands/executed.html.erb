@@ -5,6 +5,8 @@
 <%= link_to 'Executer', execute_command_path(@command) %>
 
 <p>
-  <b>Commande déjà exécutée :</b>
+  <b>Command executée :</b>
   <%=h @command.execute %>
 </p>
+
+<%= render :partial => 'execute_results' %>

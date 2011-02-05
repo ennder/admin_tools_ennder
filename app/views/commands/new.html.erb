@@ -11,13 +11,5 @@
   </p>
 <% end %>
 
-<pre>
-  <%=h @command_result %>
-</pre>
 
-
-Erreur:<br/>
-<pre>
-  <%=h @command_error %>
-</pre>
-
+<%= render :partial => 'execute_results' %>

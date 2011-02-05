@@ -45,3 +45,7 @@ Migration en Gem, et posé sur RubyGem
 
 == 1.1.9 / 2011-02-04
 * correction erreur sur nouvelle route execute dans la vue, manquait le param commande
+
+== 1.1.10 / 2011-02-04
+* Ajout lien execute dans le show
+* Ajout partiel _execute_results pour l'utiliser dans les action new et execute
