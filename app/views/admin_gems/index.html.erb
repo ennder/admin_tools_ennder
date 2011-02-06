@@ -6,7 +6,7 @@
 	Rails.configuration.gems.each_with_index { |g, i|
 %>
 <tr>
-	<td><%= i %></td><td colspan="2"><%= g.inspect %></td>
+	<td><%= i %></td><td colspan="2"><%= g.class.name %></td>
 </tr>
 <% } %>
 
