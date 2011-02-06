@@ -12,6 +12,6 @@ Bones {
   name  'admin_tools_ennder'
   authors  'Ennder'
   email    'mel@ennder.fr'
-  url      'http://www.ennder.fr'
+  url      'https://github.com/Utopism/admin_tools_ennder'
 }
 

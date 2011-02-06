@@ -8,6 +8,7 @@ ActionController::Routing::Routes.draw do |map|
 	map.admin '/admin/inflexions',		:controller => 'admin_inflexions'
 	map.admin '/admin/translations',	:controller => 'admin_translations'
 	map.admin '/admin/routes',			:controller => 'admin_routes'
+	map.admin '/admin/gems',			:controller => 'admin_gems'
 
 	map.admin '/admin/dev_infos',		:controller => 'admin_dev_infos'
 	map.admin '/admin/url_infos',		:controller => 'admin_url_infos'

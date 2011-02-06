@@ -1,0 +1,13 @@
+<table border="2">
+<thead>
+	<th colspan="3">Gems</th>
+</thead>
+<%
+	Rails.configuration.gems.each_with_index { |g, i|
+%>
+<tr>
+	<td><%= i %></td><td colspan="2"><%= g.inspect %></td>
+</tr>
+<% } %>
+
+</table>

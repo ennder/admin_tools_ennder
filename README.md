@@ -16,6 +16,7 @@ La page de menu a pour Url : /admin_menu (route automatique : **admin_menu_url**
 * Liste des inflexions
 * Liste des traductions
 * Liste des routes
+* Liste des gems
 <br/>
 * Liste des processus du serveur
 * Liste des processus du serveur (metal)  
@@ -32,7 +33,7 @@ No tests developped
 Examples
 --------
 
-    &lt;%= link_to 'Menu d\'administration', admin_menu_url %&gt;
+    <%= link_to "Menu d'administration", admin_menu_url %>
 
 Requirements
 ------------

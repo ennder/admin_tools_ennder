@@ -1,0 +1,2 @@
+class AdminGemsController < ApplicationController
+end

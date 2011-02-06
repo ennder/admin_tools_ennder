@@ -50,6 +50,8 @@ Migration en Gem, et posé sur RubyGem
 * Ajout lien execute dans le show
 * Ajout partiel _execute_results pour l'utiliser dans les action new et execute
 
-
 == 1.1.11 / 2011-02-05
 * execute_command dans la bonne action
+
+== 1.2.0 / 2011-02-06
+* Nouvelle page liste des gems
