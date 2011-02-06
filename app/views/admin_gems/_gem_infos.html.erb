@@ -1,6 +1,13 @@
-<u>Chemin des Gems :</u><br/>
-<b><%= Gem.path %></b><br/>
+<table border="2">
+<thead>
+	<th colspan="2">Chemin des Gems</th>
+</thead>
+</table>
+<%= Gem.path.split.each_with_index do |_chemin, i| %>
+<tr><td><%= i %></td><td><%= _chemin %></td></tr>
+<% end %>
 <br/>
+
 
 <table border="2">
 <thead>
