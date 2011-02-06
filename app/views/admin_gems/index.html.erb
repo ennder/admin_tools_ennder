@@ -6,7 +6,7 @@
 	Rails.configuration.gems.each_with_index { |g, i|
 %>
 <tr>
-	<td><%= i %></td><td><%= g.name %></td><td><%= g.requirement %></td><td><%= g.to_s %></td>
+	<td><%= i %></td><td><%= g.name %></td><td><%= g.requirement || '&nbsp' %></td><td><%= g.to_s %></td>
 </tr>
 <% } %>
 
