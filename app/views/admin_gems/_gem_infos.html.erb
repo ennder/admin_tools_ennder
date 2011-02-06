@@ -1,0 +1,17 @@
+Chemin des Gems :<br/>
+<%= Gem.path %>
+<br/>
+
+<table border="2">
+<thead>
+	<th colspan="3">Gems</th>
+</thead>
+<%
+	Rails.configuration.gems.each_with_index { |g, i|
+%>
+<tr>
+	<td><%= i %></td><td><%= g.name %></td><td><%= g.requirement || '&nbsp' %></td>
+</tr>
+<% } %>
+
+</table>
