@@ -1,12 +1,12 @@
 <table border="2">
 <thead>
-	<th colspan="3">Gems</th>
+	<th colspan="4">Gems</th>
 </thead>
 <%
 	Rails.configuration.gems.each_with_index { |g, i|
 %>
 <tr>
-	<td><%= i %></td><td colspan="2"><%= g.class.name %></td>
+	<td><%= i %></td><td><%= g.lib %></td><td><%= g.source %></td><td><%= g.dep %></td>
 </tr>
 <% } %>
 
