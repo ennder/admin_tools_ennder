@@ -3,7 +3,7 @@
 	<th colspan="2">Chemin des Gems</th>
 </thead>
 <%
-	Gem.path.split.each_with_index { |_chemin, i|
+	Gem.path.each_with_index { |_chemin, i|
 %>
 <tr><td><%= i %></td><td><%= _chemin %></td></tr>
 <% } %>

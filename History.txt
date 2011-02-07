@@ -59,3 +59,6 @@ Migration en Gem, et posé sur RubyGem
 == 1.2.1 / 2011-02-07
 * Infos liste des gems OK
 * Ajout liste des chemin source des Gems
+
+== 1.2.1 / 2011-02-07
+* Correction anomalie liste des chemins
