@@ -60,5 +60,9 @@ Migration en Gem, et posé sur RubyGem
 * Infos liste des gems OK
 * Ajout liste des chemin source des Gems
 
-== 1.2.1 / 2011-02-07
+== 1.2.2 / 2011-02-07
 * Correction anomalie liste des chemins
+
+== 1.2.3 / 2011-02-09
+* changement mot de passe admin : execution de commandes
+* titre info gems : gems chargés
