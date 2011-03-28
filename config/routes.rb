@@ -12,13 +12,13 @@ if Rails::VERSION::MAJOR >= 3
 			end
 
 			#Le menu
-			match 'admin_menu'					=> 'admin_menu#index'
+			match 'admin/menu'					=> 'admin_menu#index'
 
 			#Les outils
 			match 'admin/inflexions'			=> 'admin_inflexions#index'
 			match 'admin/translations'			=> 'admin_translations#index'
 			match 'admin/routes'				=> 'admin_routes#index'
-			match 'admin/gems	'				=> 'admin_gems#index'
+			match 'admin/gems'					=> 'admin_gems#index'
 			match 'admin/dev_infos'				=> 'admin_dev_infos#index'
 			match 'admin/url_infos'				=> 'admin_url_infos#index'
 			match 'admin/commands'				=> 'commands#index'
@@ -35,7 +35,7 @@ else
 		map.resources :commands, :member => { :execute => :get }
 
 		#Le menu
-		map.admin '/admin_menu', :controller => 'admin_menu'
+		map.admin '/admin/menu', :controller => 'admin_menu'
 
 		#Les outils
 		map.admin '/admin/inflexions',		:controller => 'admin_inflexions'
