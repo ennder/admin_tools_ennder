@@ -3,7 +3,7 @@
 
 <p>
     <b>host</b> - The hostname used for this request.<br/>
-	[<%=h request.host %>]
+	[<span id="host"><%=h request.host %></span>]
 </p>
 
 <p>
@@ -72,9 +72,11 @@
 
 <p>
     <b>request_uri</b> - Returns the full local request URL.<br/>
-	[<%=h request.request_uri %>]<br/>
-	Avec Rails 3 :<br/>
+<%	if Rails::VERSION::MAJOR < 3 %>
+	[<%=h request.request_uri %>]
+<%	else %>
 	[<%=h request.fullpath %>]
+<%	end %>
 </p>
 
 <p>
