@@ -22,7 +22,7 @@
 <%
 	Rails.configuration.gems.each_with_index { |g, i|
 %>
-<tr>
+<tr id="gem">
 	<td><%= i %></td><td><%= g.name %></td><td><%= g.requirement || '&nbsp' %></td>
 </tr>
 <% } %>
