@@ -11,9 +11,9 @@ singulier de categories: <%= "categories".singularize %><br/>
 </thead>
 
 <tr>
-	<th colspan="2">pluriel</th>
+	<th colspan="2" id="pluriels">[<%= @inflections_plur.size %>] pluriel(s)</th>
 </tr>
-<%  ActiveSupport::Inflector.inflections.plurals.each { |(rule, replacement)| %>
+<%  @inflections_plur.each { |(rule, replacement)| %>
 <tr>
 	<td><%= rule %></td><td><%= replacement %></td>
 </tr>
@@ -27,9 +27,9 @@ singulier de categories: <%= "categories".singularize %><br/>
 	<th>r&egrave;gle</th><th>remplacement</th>
 </thead>
 <tr>
-	<th colspan="2">singulier</th>
+	<th colspan="2" id="singuliers">[<%= @inflections_sing.size %>] singulier(s)</th>
 </tr>
-<%  ActiveSupport::Inflector.inflections.singulars.each { |(rule, replacement)| %>
+<%  @inflections_sing.each { |(rule, replacement)| %>
 <tr>
 	<td><%= rule %></td><td><%= replacement %></td>
 </tr>
