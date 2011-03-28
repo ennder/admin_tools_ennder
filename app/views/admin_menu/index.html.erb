@@ -1,24 +1,24 @@
 <!-- inclus => pas besoin du body -->
-Version de Rails: <%= Rails::VERSION::STRING %><br/>
+Version de Rails: <span id="rails_version"><%= Rails::VERSION::STRING %></span><br/>
 <br/>
 
 Listes :<br/>
-<a href="admin/inflexions">Liste des inflexions</a><br/>
-<a href="admin/translations">Liste des traductions</a><br/>
-<a href="admin/routes">Liste des routes</a><br/>
-<a href="admin/gems">Liste des gems</a><br/>
+<%= link_to 'Liste des inflexions', admin_inflexions_path %><br/>
+<%= link_to 'Liste des traductions', admin_translations_path %><br/>
+<%= link_to 'Liste des routes', admin_routes %><br/>
+<%= link_to 'Liste des gems', admin_gems_path %><br/>
 <br/>
 
 Processus :<br/>
-<a href="processus/liste_refreshed">Liste des processus du serveur</a><br/>
-<a href="admin/processus_liste">Liste des processus du serveur (metal)</a><br/>
+<%= link_to 'Liste des processus du serveur', :url => {:controller => :processus, :action => :liste_refreshed} %><br/>
+<%= link_to 'Liste des processus du serveur (metal)', processus_liste_path %><br/>
 <br/>
 
 Infos de dev :<br/>
-<a href="admin/dev_infos">Infos de developpement</a><br/>
-<a href="admin/url_infos">Infos Url</a><br/>
+<%= link_to 'Infos de developpement', dev_infos_path %><br/>
+<%= link_to 'Infos Url', url_infos_path %><br/>
 <br/>
 
 Outils :<br/>
-<a href="admin/commands">Execution de commandes shell</a><br/>
-<a href="admin/send_file">Télécharger un fichier sur le serveur</a><br/>
+<%= link_to 'Execution de commandes shell', commands_path %><br/>
+<%= link_to 'Télécharger un fichier sur le serveur', send_file_path %><br/>
