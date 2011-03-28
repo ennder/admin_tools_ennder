@@ -76,3 +76,14 @@ Migration en Gem, et posé sur RubyGem
 
 == 1.2.5 / 2011-03-28
 * correction anomalie menu admin_menu
+
+== 1.2.7 / 2011-03-28
+* tests quasi complets
+* liste Gems de l'appli pour Rails 3
+
+== 1.2.8 / 2011-03-28
+* route admin/menu
+* correction annomalie route admin/gems
+
+== 1.2.8 / 2011-03-28
+* Urls liens d'admin générées par rails

@@ -9,7 +9,7 @@ Features
 1. Ajoute une page de menu d'admin
 2. Ajoute tous les sous-menus de cette page
 
-La page de menu a pour Url : /admin_menu (route automatique : **admin_menu_url**)
+La page de menu a pour Url : /admin/menu (route automatique : **admin_menu_url**)
 
 **Menu**
 
