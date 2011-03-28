@@ -1,12 +1,24 @@
+<h3>Chemin des Gems</h3>
+
 <table border="2">
 <thead>
-	<th colspan="2">Chemin des Gems</th>
+	<tr><th>n°</th><th>chemin</th></tr>
 </thead>
 <%
-	Gem.path.each_with_index { |_chemin, i|
+	if Rails::VERSION::MAJOR < 3
+%>
+<%
+		Gem.path.each_with_index do |_chemin, i|
 %>
 <tr><td><%= i %></td><td><%= _chemin %></td></tr>
-<% } %>
+<%
+		end
+	else
+%>
+<tr><td></td><td>Aucune info.</td></tr>
+<%
+	end
+%>
 </table>
 <br/>
 
@@ -15,17 +27,18 @@
 
 <table border="2">
 <thead>
-	<th>No</th>
-	<th>Nom</th>
-	<th>Version</th>
+	<tr><th>No</th><th>Nom</th><th>Version</th></tr>
 </thead>
 <%
-	Rails.configuration.gems.each_with_index { |g, i|
+	@application_gems.each_with_index do |g, i|
 %>
-<tr id="gem">
-	<td><%= i %></td><td><%= g.name %></td><td><%= g.requirement || '&nbsp' %></td>
+<tr>
+	<td><%= i %></td><td id="gem_name_<%= g.name %>"><%= g.name %></td><td><%= ((Rails::VERSION::MAJOR < 3) ? g.requirement : g.version.to_s ) || '&nbsp' %></td>
 </tr>
-<% } %>
+<%
+	end
+%>
 </table>
 
 <h3>Liste des gems disponibles :</h3>
+Aucune info.
