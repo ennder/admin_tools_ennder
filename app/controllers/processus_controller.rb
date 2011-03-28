@@ -1,8 +1,8 @@
 class ProcessusController < ApplicationController
-  def liste
+  def index
     render :text => Time.new.strftime("%Y-%m-%d_%H:%M:%S") + '<br/>' + `ps -edfH`
   end
 
-  def liste_refreshed
+  def index_refreshed
   end
 end
