@@ -23,11 +23,12 @@ if Rails::VERSION::MAJOR >= 3
 			match 'admin/url_infos'				=> 'admin_url_infos#index'
 			match 'admin/commands'				=> 'commands#index'
 			match 'admin/send_file'				=> 'admin_send_file#index'
+			match 'admin/processus_liste'		=> 'processus#index'
 		end
 
-		puts "Engine admin_tools_ennder, config/routes.rb : [#{_routes.routes.size}] route(s)"
+		puts "Engine admin_tools_ennder, Rails 3, config/routes.rb : [#{_routes.routes.size}] route(s)"
 	rescue
-		puts "Engine admin_tools_ennder, config/routes.rb : exception : #{$!}"
+		puts "Engine admin_tools_ennder, Rails 3, config/routes.rb : exception : #{$!}"
 	end
 else
 	#Pour Rails 2
@@ -35,18 +36,20 @@ else
 		map.resources :commands, :member => { :execute => :get }
 
 		#Le menu
-		map.admin '/admin/menu', :controller => 'admin_menu'
+		map.admin_menu			'/admin/menu', :controller => 'admin_menu'
 
 		#Les outils
-		map.admin '/admin/inflexions',		:controller => 'admin_inflexions'
-		map.admin '/admin/translations',	:controller => 'admin_translations'
-		map.admin '/admin/routes',			:controller => 'admin_routes'
-		map.admin '/admin/gems',			:controller => 'admin_gems'
+		map.admin_inflexions	'/admin/inflexions',	:controller => 'admin_inflexions'
+		map.admin_translations	'/admin/translations',	:controller => 'admin_translations'
+		map.admin_routes		'/admin/routes',		:controller => 'admin_routes'
+		map.admin_gems			'/admin/gems',			:controller => 'admin_gems'
 
-		map.admin '/admin/dev_infos',		:controller => 'admin_dev_infos'
-		map.admin '/admin/url_infos',		:controller => 'admin_url_infos'
+		map.admin_dev_infos		'/admin/dev_infos',		:controller => 'admin_dev_infos'
+		map.admin_url_infos		'/admin/url_infos',		:controller => 'admin_url_infos'
 
-		map.admin '/admin/commands',		:controller => 'commands'
-		map.admin '/admin/send_file',		:controller => 'admin_send_file'
+		map.admin_commands		'/admin/commands',		:controller => 'commands'
+		map.admin_send_file		'/admin/send_file',		:controller => 'admin_send_file'
+		map.admin_processus_liste	'/admin/processus_liste',		:controller => 'processus'
 	end
+	puts "Engine admin_tools_ennder, Rails 2, config/routes.rb : [#{ActionController::Routing::Routes.routes.size}] route(s)"
 end
