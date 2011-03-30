@@ -5,20 +5,20 @@ Version de Rails: <span id="rails_version"><%= Rails::VERSION::STRING %></span><
 Listes :<br/>
 <%= link_to 'Liste des inflexions', admin_inflexions_path %><br/>
 <%= link_to 'Liste des traductions', admin_translations_path %><br/>
-<%= link_to 'Liste des routes', admin_routes %><br/>
+<%= link_to 'Liste des routes', admin_routes_path %><br/>
 <%= link_to 'Liste des gems', admin_gems_path %><br/>
 <br/>
 
 Processus :<br/>
-<%= link_to 'Liste des processus du serveur', :url => {:controller => :processus, :action => :liste_refreshed} %><br/>
-<%= link_to 'Liste des processus du serveur (metal)', processus_liste_path %><br/>
+<%= link_to 'Liste des processus du serveur', '/admin/processus_liste' %><br/>
+<%= link_to 'Liste des processus du serveur (metal)', '/admin/metal_processus_liste' %><br/>
 <br/>
 
 Infos de dev :<br/>
-<%= link_to 'Infos de developpement', dev_infos_path %><br/>
-<%= link_to 'Infos Url', url_infos_path %><br/>
+<%= link_to 'Infos de developpement', admin_dev_infos_path %><br/>
+<%= link_to 'Infos Url', admin_url_infos_path %><br/>
 <br/>
 
 Outils :<br/>
-<%= link_to 'Execution de commandes shell', commands_path %><br/>
-<%= link_to 'Télécharger un fichier sur le serveur', send_file_path %><br/>
+<%= link_to 'Execution de commandes shell', admin_commands_path %><br/>
+<%= link_to 'Télécharger un fichier sur le serveur', admin_send_file_path %><br/>
