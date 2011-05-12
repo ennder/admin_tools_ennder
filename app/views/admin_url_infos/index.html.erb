@@ -71,7 +71,7 @@
 </p>
 
 <p>
-    <b>request_uri</b> - Returns the full local request URL.<br/>
+    <b>request_uri</b>/<b>fullpath</b>(Rails 3) - Returns the full local request URL.<br/>
 <%	if Rails::VERSION::MAJOR < 3 %>
 	[<%=h request.request_uri %>]
 <%	else %>
