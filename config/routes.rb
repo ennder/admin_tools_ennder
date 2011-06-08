@@ -4,6 +4,8 @@ if Rails::VERSION::MAJOR >= 3
 #		puts "Engine admin_tools_ennder, config/routes.rb : [#{Rails.application.routes.routes.size}] route(s)"
 
 		_routes = Rails.application.routes
+		_nb_routes_avant = _routes.routes.size
+
 		_routes.draw do
 			resources :commands do
 				member do
@@ -26,9 +28,9 @@ if Rails::VERSION::MAJOR >= 3
 			match 'admin/processus_liste'		=> 'processus#index'
 		end
 
-		puts "Engine admin_tools_ennder, Rails 3, config/routes.rb : [#{_routes.routes.size}] route(s)"
+		puts "Engine admin_tools_ennder,   config/routes.rb, Rails 3 : route(s) #{_nb_routes_avant} -> #{_routes.routes.size}"
 	rescue
-		puts "Engine admin_tools_ennder, Rails 3, config/routes.rb : exception : #{$!}"
+		puts "Engine admin_tools_ennder,   config/routes.rb, Rails 3 : exception : #{$!}"
 	end
 else
 	#Pour Rails 2
@@ -51,5 +53,5 @@ else
 		map.admin_send_file		'/admin/send_file',		:controller => 'admin_send_file'
 		map.admin_processus_liste	'/admin/processus_liste',		:controller => 'processus'
 	end
-	puts "Engine admin_tools_ennder, Rails 2, config/routes.rb : [#{ActionController::Routing::Routes.routes.size}] route(s)"
+	puts "Engine admin_tools_ennder,   Rails 2, config/routes.rb : [#{ActionController::Routing::Routes.routes.size}] route(s)"
 end
