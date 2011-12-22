@@ -93,3 +93,6 @@ Migration en Gem, et posé sur RubyGem
 
 == 1.2.11 / 2011-06-08
 * Utilisation de Rails.application.routes pour Rails 3
+
+== 1.2.12 / 2011-12-22
+* info version de Ruby dans le menu admin

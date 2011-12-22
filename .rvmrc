@@ -1,2 +1,2 @@
 #Pour que le projet marche aussi avec passenger
-rvm use 1.9.2@admin_tools_ennder --create
+rvm use 1.9.2-p180@admin_tools_ennder --create
