@@ -1,57 +1,42 @@
-== 0.1.0 / 2010-05-05
-* Création Plugin
+== 1.3.0 / 2014-02-16
+* new admin page : Global Model Manipulation (GMM)
 
-== 0.9.0 / 2010-09-08
-* Ajout de la route pour la page de menu
+== 1.2.12 / 2011-12-22
+* info version de Ruby dans le menu admin
 
-== 0.9.9 / 2010-12-31
-* Posé sur GitHub
-git remote add origin git@github.com:Utopism/admin_tools_ennder.git
+== 1.2.11 / 2011-06-08
+* Utilisation de Rails.application.routes pour Rails 3
 
-== 1.0.0 / 2011-01-02
+== 1.2.10 / 2011-05-12
+* Infos Urls : Rails 3 request_uri => fullpath
 
-* 1 major enhancement
-Migration en Gem, et posé sur RubyGem
+== 1.2.9 / 2011-03-28
+* Urls liens d'admin générées par rails
 
-== 1.1.0 / 2011-01-03
+== 1.2.8 / 2011-03-28
+* route admin/menu
+* correction annomalie route admin/gems
 
-* Ajout dynamique des nouvelles routes
-* Renommage de la page admin_routes_infos en admin_routes
+== 1.2.7 / 2011-03-28
+* tests quasi complets
+* liste Gems de l'appli pour Rails 3
 
-== 1.1.1 / 2011-01-03
-* Déplacement de routes_custom.rb dans lib/config
+== 1.2.5 / 2011-03-28
+* correction anomalie menu admin_menu
 
-== 1.1.2 / 2011-01-03
-* Correction erreur dans le menu
+== 1.2.4 / 2011-03-25
+* portage à rails 3 avec un engine pour les routes
 
-== 1.1.3 / 2011-01-24
-* ajout mention exemple dans inflexions
+== 1.2.4 / 2011-03-24
+* portage à rails 3
+* tests inclus dans les applis test_gems_ennder_rails{2, 3}
 
-== 1.1.4 / 2011-02-03
-* execution de commande, infos stderr
+== 1.2.3 / 2011-02-09
+* changement mot de passe admin : execution de commandes
+* titre info gems : gems chargés
 
-== 1.1.5 / 2011-02-04
-* correction erreur sur précédente évolution
-
-== 1.1.6 / 2011-02-04
-* gestion exception sur execution commande
-* possibilité de réexecuter une commande
-
-== 1.1.7 / 2011-02-04
-* correction erreur sur nouvelle route execute
-
-== 1.1.8 / 2011-02-04
-* correction erreur sur nouvelle route execute dans la vue
-
-== 1.1.9 / 2011-02-04
-* correction erreur sur nouvelle route execute dans la vue, manquait le param commande
-
-== 1.1.10 / 2011-02-04
-* Ajout lien execute dans le show
-* Ajout partiel _execute_results pour l'utiliser dans les action new et execute
-
-== 1.1.11 / 2011-02-05
-* execute_command dans la bonne action
+== 1.2.2 / 2011-02-07
+* Correction anomalie liste des chemins
 
 == 1.2.0 / 2011-02-06
 * Nouvelle page liste des gems
@@ -60,39 +45,57 @@ Migration en Gem, et posé sur RubyGem
 * Infos liste des gems OK
 * Ajout liste des chemin source des Gems
 
-== 1.2.2 / 2011-02-07
-* Correction anomalie liste des chemins
+== 1.1.11 / 2011-02-05
+* execute_command dans la bonne action
 
-== 1.2.3 / 2011-02-09
-* changement mot de passe admin : execution de commandes
-* titre info gems : gems chargés
+== 1.1.10 / 2011-02-04
+* Ajout lien execute dans le show
+* Ajout partiel _execute_results pour l'utiliser dans les action new et execute
 
-== 1.2.4 / 2011-03-24
-* portage à rails 3
-* tests inclus dans les applis test_gems_ennder_rails{2, 3}
+== 1.1.9 / 2011-02-04
+* correction erreur sur nouvelle route execute dans la vue, manquait le param commande
 
-== 1.2.4 / 2011-03-25
-* portage à rails 3 avec un engine pour les routes
+== 1.1.8 / 2011-02-04
+* correction erreur sur nouvelle route execute dans la vue
 
-== 1.2.5 / 2011-03-28
-* correction anomalie menu admin_menu
+== 1.1.7 / 2011-02-04
+* correction erreur sur nouvelle route execute
 
-== 1.2.7 / 2011-03-28
-* tests quasi complets
-* liste Gems de l'appli pour Rails 3
+== 1.1.6 / 2011-02-04
+* gestion exception sur execution commande
+* possibilité de réexecuter une commande
 
-== 1.2.8 / 2011-03-28
-* route admin/menu
-* correction annomalie route admin/gems
+== 1.1.5 / 2011-02-04
+* correction erreur sur précédente évolution
 
-== 1.2.9 / 2011-03-28
-* Urls liens d'admin générées par rails
+== 1.1.4 / 2011-02-03
+* execution de commande, infos stderr
 
-== 1.2.10 / 2011-05-12
-* Infos Urls : Rails 3 request_uri => fullpath
+== 1.1.3 / 2011-01-24
+* ajout mention exemple dans inflexions
 
-== 1.2.11 / 2011-06-08
-* Utilisation de Rails.application.routes pour Rails 3
+== 1.1.2 / 2011-01-03
+* Correction erreur dans le menu
 
-== 1.2.12 / 2011-12-22
-* info version de Ruby dans le menu admin
+== 1.1.1 / 2011-01-03
+* Déplacement de routes_custom.rb dans lib/config
+
+== 1.1.0 / 2011-01-03
+
+* Ajout dynamique des nouvelles routes
+* Renommage de la page admin_routes_infos en admin_routes
+
+== 1.0.0 / 2011-01-02
+
+* 1 major enhancement
+Migration en Gem, et posé sur RubyGem
+
+== 0.9.9 / 2010-12-31
+* Posé sur GitHub
+git remote add origin git@github.com:Utopism/admin_tools_ennder.git
+
+== 0.9.0 / 2010-09-08
+* Ajout de la route pour la page de menu
+
+== 0.1.0 / 2010-05-05
+* Création Plugin
