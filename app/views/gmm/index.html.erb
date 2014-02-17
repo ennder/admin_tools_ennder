@@ -1,0 +1,16 @@
+<table border="2">
+<thead>
+	<th colspan="2">Model classes</th>
+</thead>
+<%
+	all_models = ActiveRecord::Base.descendants.map(&:name)
+
+	all_models.each_with_index { |model, i|
+%>
+<tr>
+	<td><%= i %></td><td><%= model %></td>
+</tr>
+<%
+	}
+%>
+</table>
