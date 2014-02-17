@@ -26,6 +26,7 @@ if Rails::VERSION::MAJOR >= 3
 			match 'admin/commands'				=> 'commands#index'
 			match 'admin/send_file'				=> 'admin_send_file#index'
 			match 'admin/processus_liste'		=> 'processus#index'
+			match 'admin/gmm'					=> 'gmm#index'
 		end
 
 		puts "Engine admin_tools_ennder,   config/routes.rb, Rails 3 : route(s) #{_nb_routes_avant} -> #{_routes.routes.size}"
