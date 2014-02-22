@@ -1,10 +1,10 @@
 # Load any model classes
-Dir[Rails.root.to_s + '/app/models/**/*.rb'].each do |file| 
+Dir[Rails.root.to_s + '/app/models/**/*.rb'].each do |file|
 	begin
-#    puts "loading #{file}"
+#		puts "loading #{file}"
 		require file
 	rescue
-    Rails.logger.error "GTM: Error loading #{file}"
+		Rails.logger.error "GTM: Error loading #{file}"
 	end
 end
 	
@@ -36,40 +36,40 @@ def models
 end
 
 def all_models
-  # must eager load all the classes...
-  Dir.glob("#{RAILS_ROOT}/app/models/**/*.rb") do |model_path|
-    begin
-      require model_path
-    rescue
-      # ignore
-    end
-  end
-  # simply return them
-  ActiveRecord::Base.send(:subclasses)
+	# must eager load all the classes...
+	Dir.glob("#{RAILS_ROOT}/app/models/**/*.rb") do |model_path|
+		begin
+			require model_path
+		rescue
+			# ignore
+		end
+	end
+	# simply return them
+	ActiveRecord::Base.send(:subclasses)
 end
 
 def load_models_in_development
-  if Rails.env == "development"
-    load_models_for(Rails.root)
-    Rails.application.railties.engines.each do |r|
-      load_models_for(r.root)
-    end
-  end
+	if Rails.env == "development"
+		load_models_for(Rails.root)
+		Rails.application.railties.engines.each do |r|
+			load_models_for(r.root)
+		end
+	end
 end
 
 def load_models_for(root)
-  Dir.glob("#{root}/app/models/**/*.rb") do |model_path|
-    begin
-      require model_path
-    rescue
-      # ignore
-    end
-  end
+	Dir.glob("#{root}/app/models/**/*.rb") do |model_path|
+		begin
+			require model_path
+		rescue
+			# ignore
+		end
+	end
 end
 
 Rails.application.eager_load! unless Rails.configuration.cache_classes
 
 def list_models
-  Dir.glob("#{Rails.root}/app/models/*.rb").map{|x| x.split("/").last.split(".").first.camelize}
+	Dir.glob("#{Rails.root}/app/models/*.rb").map{|x| x.split("/").last.split(".").first.camelize}
 end
 =end
