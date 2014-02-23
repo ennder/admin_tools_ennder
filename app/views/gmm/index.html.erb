@@ -1,15 +1,18 @@
 <table border="2">
 <thead>
-	<th colspan="2">Model classes</th>
+	<th>Model classes</th>
+	<th>Relation type</th>
+	<th>Relation</th>
 </thead>
 <%
 	@all_models.each_with_index { |(name, relations), i|
 -%>
 <tr>
-	<td><%= i %></td><td colspan="2"><%= name %></td>
+	<td colspan="3">[<%= i %>] <b><%= name %></b></td>
 </tr>
 <%
 		relations.each { |type, relations_of_type|
+			next if relations_of_type.empty?
 -%>
 <tr>
 	<td></td><td colspan="2"><%= type %> [<%= relations_of_type.size %>]</td>
@@ -18,7 +21,7 @@
 			relations_of_type.each { |r|
 -%>
 <tr>
-	<td colspan="2"></td><td><%= r.inspect %></td>
+	<td></td><td><b><%= "#{type}&nbsp;:#{r.name}".html_safe %></b></td><td><%= r.inspect %></td>
 </tr>
 <%
 			}

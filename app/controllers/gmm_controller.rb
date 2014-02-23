@@ -1,17 +1,17 @@
 class GmmController < ApplicationController
 	def index
-		# Load any model classes
-		Dir[Rails.root.to_s + '/app/models/**/*.rb'].each do |file|
-			begin
-#				puts "loading #{file}"
-				require file
-			rescue
-				Rails.logger.error "GTM: Error loading #{file}"
-			end
+		unless defined?(@all_models)
+			@@all_models = {}
+			# Load any model classes
+			Dir[Rails.root.to_s + '/app/models/**/*.rb'].each do |file|
+				begin
+					Rails.logger.info "GTM: loading #{file}"
+					require file
+				rescue
+					Rails.logger.error "GTM: Error loading #{file}"
+				end
 
-			# Store it in a class object
-			if !defined?(@all_models)
-				@@all_models = {}
+				# Store it in a class object
 				ActiveRecord::Base.descendants.each{|m|
 					@@all_models[m.name] = {
 						:has_many => m.reflect_on_all_associations(:has_many),
@@ -20,8 +20,8 @@ class GmmController < ApplicationController
 					}
 				}
 			end
-
-			@all_models = @@all_models
 		end
+
+		@all_models = @@all_models
 	end
 end
