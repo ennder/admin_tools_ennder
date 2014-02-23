@@ -3,14 +3,26 @@
 	<th colspan="2">Model classes</th>
 </thead>
 <%
-	all_models = ActiveRecord::Base.descendants.map(&:name)
-
-	all_models.each_with_index { |model, i|
-%>
+	@all_models.each_with_index { |(name, relations), i|
+-%>
 <tr>
-	<td><%= i %></td><td><%= model %></td>
+	<td><%= i %></td><td colspan="2"><%= name %></td>
 </tr>
 <%
-	}
-%>
+		relations.each { |type, relations_of_type|
+-%>
+<tr>
+	<td></td><td colspan="2"><%= type %> [<%= relations_of_type.size %>]</td>
+</tr>
+<%
+			relations_of_type.each { |r|
+-%>
+<tr>
+	<td colspan="2"></td><td><%= r.inspect %></td>
+</tr>
+<%
+			}
+		} # relations.each
+	} # @all_models.each_with_index
+-%>
 </table>
