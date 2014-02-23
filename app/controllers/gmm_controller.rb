@@ -8,6 +8,20 @@ class GmmController < ApplicationController
 			rescue
 				Rails.logger.error "GTM: Error loading #{file}"
 			end
+
+			# Store it in a class object
+			if !defined?(@all_models)
+				@@all_models = {}
+				ActiveRecord::Base.descendants.each{|m|
+					@@all_models[m.name] = {
+						:has_many => m.reflect_on_all_associations(:has_many),
+						:has_one => m.reflect_on_all_associations(:has_one),
+						:belongs_to => m.reflect_on_all_associations(:belongs_to)
+					}
+				}
+			end
+
+			@all_models = @@all_models
 		end
 	end
 end
