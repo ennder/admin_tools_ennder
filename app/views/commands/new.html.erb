@@ -1,7 +1,7 @@
 <%= link_to 'Historique des commandes', commands_path %>
 <br/>
 <% form_for(@command) do |f| %>
-  <%= f.error_messages %>
+<%= render :partial => 'common/error_messages', :model => @command %>
 
   <p>
     <%= f.text_field :execute %>
@@ -10,6 +10,5 @@
     <%= f.submit 'Execute' %>
   </p>
 <% end %>
-
 
 <%= render :partial => 'execute_results' %>
