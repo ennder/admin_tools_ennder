@@ -15,6 +15,7 @@ if Rails::VERSION::MAJOR >= 3
 
 			#Le menu
 			match 'admin/menu'					=> 'admin_menu#index'
+			match 'admin'						=> 'admin_menu#index'
 
 			#Les outils
 			match 'admin/inflexions'			=> 'admin_inflexions#index'
@@ -39,20 +40,21 @@ else
 		map.resources :commands, :member => { :execute => :get }
 
 		#Le menu
-		map.admin_menu			'/admin/menu', :controller => 'admin_menu'
+		map.admin_menu				'/admin/menu',				:controller => 'admin_menu'
+		map.admin_menu				'/admin',					:controller => 'admin_menu'
 
 		#Les outils
-		map.admin_inflexions	'/admin/inflexions',	:controller => 'admin_inflexions'
-		map.admin_translations	'/admin/translations',	:controller => 'admin_translations'
-		map.admin_routes		'/admin/routes',		:controller => 'admin_routes'
-		map.admin_gems			'/admin/gems',			:controller => 'admin_gems'
+		map.admin_inflexions		'/admin/inflexions',		:controller => 'admin_inflexions'
+		map.admin_translations		'/admin/translations',		:controller => 'admin_translations'
+		map.admin_routes			'/admin/routes',			:controller => 'admin_routes'
+		map.admin_gems				'/admin/gems',				:controller => 'admin_gems'
 
-		map.admin_dev_infos		'/admin/dev_infos',		:controller => 'admin_dev_infos'
-		map.admin_url_infos		'/admin/url_infos',		:controller => 'admin_url_infos'
+		map.admin_dev_infos			'/admin/dev_infos',			:controller => 'admin_dev_infos'
+		map.admin_url_infos			'/admin/url_infos',			:controller => 'admin_url_infos'
 
-		map.admin_commands		'/admin/commands',		:controller => 'commands'
-		map.admin_send_file		'/admin/send_file',		:controller => 'admin_send_file'
-		map.admin_processus_liste	'/admin/processus_liste',		:controller => 'processus'
+		map.admin_commands			'/admin/commands',			:controller => 'commands'
+		map.admin_send_file			'/admin/send_file',			:controller => 'admin_send_file'
+		map.admin_processus_liste	'/admin/processus_liste',	:controller => 'processus'
 	end
 	puts "Engine admin_tools_ennder,   Rails 2, config/routes.rb : [#{ActionController::Routing::Routes.routes.size}] route(s)"
 end
