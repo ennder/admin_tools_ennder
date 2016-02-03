@@ -5,7 +5,8 @@
 	<th>Relation</th>
 </thead>
 <%
-	@all_models.each_with_index { |(name, relations), i|
+	@all_models.keys.sort.each_with_index{ |name, i|
+		relations = @all_models[name]
 -%>
 <tr>
 	<td colspan="3">[<%= i %>] <b><%= name %></b></td>
@@ -26,6 +27,6 @@
 <%
 			}
 		} # relations.each
-	} # @all_models.each_with_index
+	} # @all_models.keys.sort
 -%>
 </table>
