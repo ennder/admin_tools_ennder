@@ -1,5 +1,40 @@
 # -*- coding: utf-8 -*-
-if Rails::VERSION::MAJOR >= 3
+if Rails::VERSION::MAJOR >= 4
+	begin
+#		puts "Engine admin_tools_ennder, config/routes.rb : [#{Rails.application.routes.routes.size}] route(s)"
+
+		_routes = Rails.application.routes
+		_nb_routes_avant = _routes.routes.size
+
+		_routes.draw do
+			resources :commands do
+				member do
+					get 'execute'
+				end
+			end
+
+			#Le menu
+			match 'admin/menu'            => 'admin_menu#index',         :via => [:get]
+			match 'admin'                 => 'admin_menu#index',         :via => [:get]
+
+			#Les outils
+			match 'admin/inflexions'      => 'admin_inflexions#index',   :via => [:get]
+			match 'admin/translations'    => 'admin_translations#index', :via => [:get]
+			match 'admin/routes'          => 'admin_routes#index',       :via => [:get]
+			match 'admin/gems'            => 'admin_gems#index',         :via => [:get]
+			match 'admin/dev_infos'       => 'admin_dev_infos#index',    :via => [:get]
+			match 'admin/url_infos'       => 'admin_url_infos#index',    :via => [:get]
+			match 'admin/commands'        => 'commands#index',           :via => [:get]
+			match 'admin/send_file'       => 'admin_send_file#index',    :via => [:get]
+			match 'admin/processus_liste' => 'processus#index',          :via => [:get]
+			match 'admin/gmm'             => 'gmm#index',                :via => [:get]
+		end
+
+		puts "Engine admin_tools_ennder,   config/routes.rb, Rails 4 : route(s) #{_nb_routes_avant} -> #{_routes.routes.size}"
+	rescue
+		puts "Engine admin_tools_ennder,   config/routes.rb, Rails 4 : exception : #{$!}"
+	end
+else
 	begin
 #		puts "Engine admin_tools_ennder, config/routes.rb : [#{Rails.application.routes.routes.size}] route(s)"
 
@@ -34,27 +69,4 @@ if Rails::VERSION::MAJOR >= 3
 	rescue
 		puts "Engine admin_tools_ennder,   config/routes.rb, Rails 3 : exception : #{$!}"
 	end
-else
-	#Pour Rails 2
-	ActionController::Routing::Routes.draw do |map|
-		map.resources :commands, :member => { :execute => :get }
-
-		#Le menu
-		map.admin_menu				'/admin/menu',				:controller => 'admin_menu'
-		map.admin_menu				'/admin',					:controller => 'admin_menu'
-
-		#Les outils
-		map.admin_inflexions		'/admin/inflexions',		:controller => 'admin_inflexions'
-		map.admin_translations		'/admin/translations',		:controller => 'admin_translations'
-		map.admin_routes			'/admin/routes',			:controller => 'admin_routes'
-		map.admin_gems				'/admin/gems',				:controller => 'admin_gems'
-
-		map.admin_dev_infos			'/admin/dev_infos',			:controller => 'admin_dev_infos'
-		map.admin_url_infos			'/admin/url_infos',			:controller => 'admin_url_infos'
-
-		map.admin_commands			'/admin/commands',			:controller => 'commands'
-		map.admin_send_file			'/admin/send_file',			:controller => 'admin_send_file'
-		map.admin_processus_liste	'/admin/processus_liste',	:controller => 'processus'
-	end
-	puts "Engine admin_tools_ennder,   Rails 2, config/routes.rb : [#{ActionController::Routing::Routes.routes.size}] route(s)"
 end
