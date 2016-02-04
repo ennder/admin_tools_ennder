@@ -113,7 +113,7 @@ Migration en Gem, et posé sur RubyGem
 
 == 0.9.9 / 2010-12-31
 * Posé sur GitHub
-git remote add origin git@github.com:Utopism/admin_tools_ennder.git
+git remote add origin git@github.com:Ennder/admin_tools_ennder.git
 
 == 0.9.0 / 2010-09-08
 * Ajout de la route pour la page de menu
