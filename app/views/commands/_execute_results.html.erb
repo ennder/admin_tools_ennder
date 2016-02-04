@@ -2,8 +2,9 @@
   <%= @command_result %>
 </pre>
 
-
+<% if @command_error.present? %>
 Erreur:<br/>
 <pre>
   <%= @command_error %>
 </pre>
+<% end %>
