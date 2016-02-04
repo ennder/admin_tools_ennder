@@ -1,0 +1,7 @@
+- publish the gem :
+gem push pkg/<nom>.gem
+
+
+- test :
+C.f. rails/1_gems/test_gems_ennder_rails3
+rake test
