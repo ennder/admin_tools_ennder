@@ -38,7 +38,7 @@ Examples
 Requirements
 ------------
 
-- Rails 2.3 or greater
+- Rails 3 or greater
 - gem Open4 pour l'execution des commandes
 
 Install
@@ -56,7 +56,7 @@ License
 
 (The MIT License)
 
-Copyright (c) 2010-2011 Ennder
+Copyright (c) 2010-2016 Ennder
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
