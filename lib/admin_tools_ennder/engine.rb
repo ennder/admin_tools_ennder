@@ -4,5 +4,4 @@ if Rails::VERSION::MAJOR >= 3
 		class Engine < Rails::Engine
 		end
 	end
-
 end
