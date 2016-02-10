@@ -1,8 +1,2 @@
 #Kde
 .directory
-
-#Bones
-pkg/admin_tools_ennder-*/**/*
-pkg/admin_tools_ennder-*/*
-
-pkg/admin_tools_ennder-*.tgz
