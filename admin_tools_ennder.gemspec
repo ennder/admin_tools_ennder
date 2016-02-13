@@ -11,15 +11,17 @@ Gem::Specification.new do |s|
   s.email       = 'mel@ennder.fr'
 
   s.files       = [
-    'lib/admin_tools_ennder.rb',
+    'Changelog',
     'MIT-LICENSE',
     'README.md',
+    'Rakefile', # Add tests
     'TODO',
-    'Changelog'
-    
+    'VERSION',
   ]
   s.files += Dir['app/**/*']
   s.files += Dir['config/**/*']
+  s.files += Dir['db/**/*']
+  s.files += Dir['lib/**/*']
 
   s.homepage    = 'https://github.com/ennder/admin_tools_ennder'
   s.license     = 'MIT'
