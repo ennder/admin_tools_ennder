@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.files += Dir['config/**/*']
   s.files += Dir['db/**/*']
   s.files += Dir['lib/**/*']
+  s.files += Dir['test/**/*']
 
   s.homepage    = 'https://github.com/ennder/admin_tools_ennder'
   s.license     = 'MIT'
