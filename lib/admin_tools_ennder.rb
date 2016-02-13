@@ -4,6 +4,11 @@ module AdminToolsEnnder
   # :stopdoc:
   LIBPATH = ::File.expand_path(::File.dirname(__FILE__)) + ::File::SEPARATOR
   PATH = ::File.dirname(LIBPATH) + ::File::SEPARATOR
+  debug = true
+  if debug
+    Rails.logger.debug "  admin_tools_ennder LIBPATH=#{LIBPATH}"
+    Rails.logger.debug "    PATH=#{PATH}"
+  end if
   # :startdoc:
 
   # Returns the version string for the library.
@@ -26,6 +31,8 @@ module AdminToolsEnnder
         $LOAD_PATH.shift
       end
     end
+
+    Rails.logger.debug "  self.libpath ->#{rv}" if debug
     return rv
   end
 
@@ -43,6 +50,8 @@ module AdminToolsEnnder
         $LOAD_PATH.shift
       end
     end
+
+    Rails.logger.debug "  self.path ->#{rv}" if debug
     return rv
   end
 
@@ -53,13 +62,16 @@ module AdminToolsEnnder
   #
   def self.require_all_libs_relative_to( fname, dir = nil )
     dir ||= ::File.basename(fname, '.*')
+    Rails.logger.debug "  self.require_all_libs_relative_to, dir=#{dir}" if debug
     search_me = ::File.expand_path(
         ::File.join(::File.dirname(fname), dir, '**', '*.rb'))
 
-    Dir.glob(search_me).sort.each {|rb| require rb}
+    Rails.logger.debug "    search_me=#{search_me}" if debug
+    Dir.glob(search_me).sort.each {|rb|
+      Rails.logger.debug "    require #{rb}" if debug
+      require rb
+    }
   end
-
 end  # module AdminToolsEnnder
 
 AdminToolsEnnder.require_all_libs_relative_to(__FILE__)
-
