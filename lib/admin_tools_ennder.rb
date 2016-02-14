@@ -1,20 +1,20 @@
 
 module AdminToolsEnnder
-
   # :stopdoc:
   LIBPATH = ::File.expand_path(::File.dirname(__FILE__)) + ::File::SEPARATOR
   PATH = ::File.dirname(LIBPATH) + ::File::SEPARATOR
-  debug = true
-  if debug
-    Rails.logger.debug "  admin_tools_ennder LIBPATH=#{LIBPATH}"
-    Rails.logger.debug "    PATH=#{PATH}"
+
+  @debug = false
+  if @debug
+    puts "  admin_tools_ennder LIBPATH=#{LIBPATH}"
+    puts "    PATH=#{PATH}"
   end if
   # :startdoc:
 
   # Returns the version string for the library.
   #
   def self.version
-    @version ||= File.read(path('version.txt')).strip
+    @version ||= File.read(path('VERSION')).strip
   end
 
   # Returns the library path for the module. If any arguments are given,
@@ -32,7 +32,7 @@ module AdminToolsEnnder
       end
     end
 
-    Rails.logger.debug "  self.libpath ->#{rv}" if debug
+    puts "  self.libpath ->#{rv}" if @debug
     return rv
   end
 
@@ -51,7 +51,7 @@ module AdminToolsEnnder
       end
     end
 
-    Rails.logger.debug "  self.path ->#{rv}" if debug
+    puts "  self.path ->#{rv}" if @debug
     return rv
   end
 
@@ -62,13 +62,13 @@ module AdminToolsEnnder
   #
   def self.require_all_libs_relative_to( fname, dir = nil )
     dir ||= ::File.basename(fname, '.*')
-    Rails.logger.debug "  self.require_all_libs_relative_to, dir=#{dir}" if debug
+    puts "  self.require_all_libs_relative_to, dir=#{dir}" if @debug
     search_me = ::File.expand_path(
         ::File.join(::File.dirname(fname), dir, '**', '*.rb'))
 
-    Rails.logger.debug "    search_me=#{search_me}" if debug
+    puts "    search_me=#{search_me}" if @debug
     Dir.glob(search_me).sort.each {|rb|
-      Rails.logger.debug "    require #{rb}" if debug
+      puts "    require #{rb}" if @debug
       require rb
     }
   end
