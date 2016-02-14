@@ -15,7 +15,7 @@
 		end
 	else
 %>
-<tr><td></td><td>Aucune info.</td></tr>
+<tr><td></td><td>Gem.path Marche que pour Rails 2.</td></tr>
 <%
 	end
 %>
@@ -33,7 +33,9 @@
 	@application_gems.each_with_index do |g, i|
 %>
 <tr>
-	<td><%= i %></td><td id="gem_name_<%= g.name %>"><%= g.name %></td><td><%= ((Rails::VERSION::MAJOR < 3) ? g.requirement : g.version.to_s ) || '&nbsp' %></td>
+	<td><%= i %></td>
+	<td id="gem_name_<%= g[0] %>"><%= g[0] %></td>
+	<td><%= g[1] %></td>
 </tr>
 <%
 	end
@@ -41,4 +43,4 @@
 </table>
 
 <h3>Liste des gems disponibles :</h3>
-Aucune info.
+Pas encore développé.
