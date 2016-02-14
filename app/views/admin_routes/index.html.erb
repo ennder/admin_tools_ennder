@@ -1,8 +1,10 @@
 <%= render :partial => 'common/top_menu' %>
 
+<h2>Non-Nommées</h2>
+
 <table border="2">
 <thead>
-	<th colspan="3">Routes</th>
+	<th colspan="2">Routes</th>
 </thead>
 <%
 	if Rails::VERSION::MAJOR >= 3
@@ -14,18 +16,47 @@
 	_routes.routes.each_with_index { |r, i|
 %>
 <tr>
-	<td><%= i %></td><td colspan="2"><%= r %></td>
+	<td><%= i %></td>
+	<td>
+		defaults : <%= r.defaults %><br/>
+		constraints : <%= r.constraints %><br/>
+		precedence : <%= r.precedence %><br/>
+		<u>pattern</u> : <br/>
+		&nbsp;&nbsp;pattern.ast : <%= r.path.ast %><br/>
+		&nbsp;&nbsp;pattern.names : <%= r.path.names %><br/>
+		&nbsp;&nbsp;pattern.source : <%= r.path.source %><br/>
+	</td>
 </tr>
 <% } %>
+</table>
+<br/>
 
+<h2>Nommées</h2>
+
+<table border="2">
 <thead>
 	<th colspan="3">Routes nommées</th>
 </thead>
 <%
-	_routes.named_routes.routes.each_with_index { |name_route, i|
+	_routes.named_routes.routes.each_with_index { |nr, i|
+		r = nr[1]
 %>
 <tr>
-	<td><%= i %></td><td><%= name_route[0] %></td><td><%= name_route[1] %></td>
+	<td>
+		<%= i %>
+	</td>
+	<td>
+		<%= nr[0] %>
+	</td>
+	<td>
+		defaults : <%= r.defaults %><br/>
+		constraints : <%= r.constraints %><br/>
+		precedence : <%= r.precedence %><br/>
+		<u>pattern</u> : <br/>
+		&nbsp;&nbsp;pattern.ast : <%= r.path.ast %><br/>
+		&nbsp;&nbsp;pattern.names : <%= r.path.names %><br/>
+		&nbsp;&nbsp;pattern.source : <%= r.path.source %><br/>
+	</td>
 </tr>
 <%
 	}
