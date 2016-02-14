@@ -1,6 +1,5 @@
-<%= link_to 'Retour au menu d\'administartion', :controller => :admin_menu %><br/>
-<br/>
-<br/>
+<%= render :partial => 'common/top_menu' %>
+
 <%= link_to 'Nouvelle commande', new_command_path %><br/>
 <br/>
 [<%= @commands_nb %>] commande(s)<br/>

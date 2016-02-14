@@ -1,26 +1,29 @@
 <!-- inclus => pas besoin du body -->
-Version de Rails: <span id="rails_version"><%= Rails::VERSION::STRING %></span><br/>
-Version de Ruby: <span id="ruby_version"><%= RUBY_VERSION %> p<%= RUBY_PATCHLEVEL %></span><br/>
+Version de Rails: <span id="rails_version"><b><%= Rails::VERSION::STRING %></b></span><br/>
+Version de Ruby: <span id="ruby_version"><b><%= RUBY_VERSION %> p<%= RUBY_PATCHLEVEL %></b></span><br/>
 <br/>
 
-Listes :<br/>
+<h2>Listes :</h2>
+
 <%= link_to 'Liste des inflexions', admin_inflexions_path %><br/>
 <%= link_to 'Liste des traductions', admin_translations_path %><br/>
 <%= link_to 'Liste des routes', admin_routes_path %><br/>
 <%= link_to 'Liste des gems', admin_gems_path %><br/>
 <br/>
 
-Processus :<br/>
+<h2>Processus :</h2>
+
 <%= link_to 'Liste des processus du serveur', '/admin/processus_liste' %><br/>
 <%= link_to 'Liste des processus du serveur (metal)', '/admin/metal_processus_liste' %><br/>
 <br/>
 
-Infos de dev :<br/>
+<h2>Infos de dev :</h2>
+
 <%= link_to 'Infos de developpement', admin_dev_infos_path %><br/>
 <%= link_to 'Infos Url', admin_url_infos_path %><br/>
 <br/>
 
-Outils :<br/>
+<h2>Outils :</h2>
 <%= link_to 'Execution de commandes shell', admin_commands_path %><br/>
 <%= link_to 'Télécharger un fichier sur le serveur', admin_send_file_path %><br/>
 <%= link_to 'Generic Models Management (GMM)', admin_gmm_path %><br/>
