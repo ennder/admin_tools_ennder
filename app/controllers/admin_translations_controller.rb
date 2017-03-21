@@ -10,6 +10,10 @@ class AdminTranslationsController < ApplicationController
 		end
 		logger.debug "[#{@traductions_all.size}] traduction(s)"
 
+		@locales_list = I18n.available_locales.inject(''){ |list, l|
+			list << '&nbsp;&nbsp;<b>' + l.to_s + '</b>'
+		}
+
 		respond_to do |format|
 			format.html # index.html.erb
 		end
