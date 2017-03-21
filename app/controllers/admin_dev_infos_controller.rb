@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 class AdminDevInfosController < ApplicationController
+	def index
+		respond_to do |format|
+			format.html # index.html.erb
+		end
+	end
+
 	def show
 		if params[:nom_objet].blank?
 			flash[:notice] = 'Il faut spécifier un nom de Classe.'
