@@ -2,7 +2,8 @@
 
 <h1>Liste des traductions</h1>
 
-Locale(s) disponible(s) [<%= I18n.available_locales.size %>] :<%= I18n.available_locales.collect{ |_locale| '&nbsp;' + _locale.to_s } %><br/>
+
+Locale(s) disponible(s) [<%= I18n.available_locales.size %>] :<%= @locales_list.html_safe %><br/>
 <br/>
 
 <table border="2">
