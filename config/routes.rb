@@ -14,6 +14,8 @@ if Rails::VERSION::MAJOR >= 4
         end
       end
 
+      resources :admin_dev_infos, only: [:show]
+
       #Le menu
       match 'admin/menu'            => 'admin_menu#index',         :via => [:get]
       match 'admin'                 => 'admin_menu#index',         :via => [:get]
@@ -48,6 +50,8 @@ else
           get 'execute'
         end
       end
+
+      resources :admin_dev_infos, only: [:show]
 
       #Le menu
       match 'admin/menu'            => 'admin_menu#index'
