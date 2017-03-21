@@ -1,3 +1,6 @@
+== 1.3.11 / 2017-03-21
+* test with ruby 2.3
+
 == 1.3.8 / 2016-02-04
 * css id on command_result pre in action command/new
 
