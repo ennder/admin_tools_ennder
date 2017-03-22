@@ -14,8 +14,6 @@ if Rails::VERSION::MAJOR >= 4
         end
       end
 
-      resources :admin_dev_infos, only: [:show]
-
       #Le menu
       match 'admin/menu'            => 'admin_menu#index',         :via => [:get]
       match 'admin'                 => 'admin_menu#index',         :via => [:get]
@@ -26,6 +24,7 @@ if Rails::VERSION::MAJOR >= 4
       match 'admin/routes'          => 'admin_routes#index',       :via => [:get]
       match 'admin/gems'            => 'admin_gems#index',         :via => [:get]
       match 'admin/dev_infos'       => 'admin_dev_infos#index',    :via => [:get]
+      match 'admin/dev_infos/:id'   => 'admin_dev_infos#show',     :via => [:get]
       match 'admin/url_infos'       => 'admin_url_infos#index',    :via => [:get]
       match 'admin/commands'        => 'commands#index',           :via => [:get]
       match 'admin/send_file'       => 'admin_send_file#index',    :via => [:get]
@@ -51,8 +50,6 @@ else
         end
       end
 
-      resources :admin_dev_infos, only: [:show]
-
       #Le menu
       match 'admin/menu'            => 'admin_menu#index'
       match 'admin'                 => 'admin_menu#index'
@@ -63,6 +60,7 @@ else
       match 'admin/routes'          => 'admin_routes#index'
       match 'admin/gems'            => 'admin_gems#index'
       match 'admin/dev_infos'       => 'admin_dev_infos#index'
+      match 'admin/dev_infos/:id'   => 'admin_dev_infos#show'
       match 'admin/url_infos'       => 'admin_url_infos#index'
       match 'admin/commands'        => 'commands#index'
       match 'admin/send_file'       => 'admin_send_file#index'
