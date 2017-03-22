@@ -7,13 +7,7 @@
 	<th colspan="2">Routes</th>
 </thead>
 <%
-	if Rails::VERSION::MAJOR >= 3
-		_routes = Rails.application.routes
-	else
-		_routes = ActionController::Routing::Routes
-	end
-
-	_routes.routes.each_with_index { |r, i|
+	@routes_hash.each_with_index { |r, i|
 %>
 <tr>
 	<td><%= i %></td>
@@ -38,15 +32,21 @@
 	<th colspan="3">Routes nommées</th>
 </thead>
 <%
-	_routes.named_routes.routes.each_with_index { |nr, i|
-		r = nr[1]
+	@routes_hash.each_with_index { |nr, i|
+		if nr.is_a?(Array)
+			r = nr[1]
+			nom_route = nr[0]
+		else
+			r = nr
+			nom_route = r.name
+		end
 %>
 <tr>
 	<td>
 		<%= i %>
 	</td>
 	<td>
-		<%= nr[0] %>
+		<%= nom_route %>
 	</td>
 	<td>
 		defaults : <%= r.defaults %><br/>
