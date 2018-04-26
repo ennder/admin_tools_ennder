@@ -107,7 +107,8 @@ private
 	
 	def execute_command
 		begin
-			pid, stdin, stdout, stderr = Open4::popen4 @command.execute.to_s
+			# pid, stdin
+			_, _, stdout, stderr = Open4::popen4 @command.execute.to_s
 			@command_result = stdout.read.strip
 			@command_error = stderr.read.strip
 		rescue Exception => e
