@@ -1,7 +1,11 @@
 require "open4"
 
 class CommandsController < ApplicationController
-  core_before_action :authenticate, :except => [:index, :show, :new, :destroy]
+  if defined?(:before_action)
+    before_action( :authenticate, :except => [:index, :show, :new, :destroy] )
+  else
+    before_filter( :authenticate, :except => [:index, :show, :new, :destroy] )
+  end
 
   # GET /commands
   # GET /commands.xml
@@ -113,19 +117,6 @@ private
       @command_error = stderr.read.strip
     rescue Exception => e
       @command_error = "Exception: #{e.inspect}"
-    end
-  end
-
-  def core_before_action(*args)
-    if (
-      (Rails::VERSION::MAJOR < 5) ||
-      (
-      	(Rails::VERSION::MAJOR == 5) && (Rails::VERSION::MINOR < 1)
-      )
-    )
-      before_filter(args)
-    else
-      before_action(args)
     end
   end
 end
