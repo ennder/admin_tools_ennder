@@ -1,3 +1,6 @@
+== 1.3.19 / 2018-09-13
+* commands controller : protected attributes
+
 == 1.3.18 / 2018-09-13
 * migration version = 5.0
 

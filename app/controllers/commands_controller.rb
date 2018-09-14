@@ -44,7 +44,7 @@ class CommandsController < ApplicationController
   # POST /commands
   # POST /commands.xml
   def create
-    @command = Command.new(params[:command])
+    @command = Command.new(command_params)
 
     respond_to do |format|
       _result = @command.save
@@ -118,5 +118,11 @@ private
     rescue Exception => e
       @command_error = "Exception: #{e.inspect}"
     end
+  end
+
+  def command_params
+    params.require(:command).permit(
+        :execute
+      )
   end
 end
