@@ -19,7 +19,7 @@ La page de menu a pour Url : /admin/menu (route automatique : **admin_menu_url**
 * Liste des gems
 <br/>
 * Liste des processus du serveur
-* Liste des processus du serveur (metal)  
+* Liste des processus du serveur (metal)
 <br/>
 * Infos de developpement
 * Infos de l'Url courante
@@ -27,7 +27,7 @@ La page de menu a pour Url : /admin/menu (route automatique : **admin_menu_url**
 * Execution de commandes shell
 * Télécharger un fichier
 
-Unsolved problems :  
+Unsolved problems :
 No tests developped
 
 Examples
