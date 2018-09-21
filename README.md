@@ -3,6 +3,8 @@
 
 Pages informatives de test et de développement
 
+- DO NOT USE previous gem versions before 1.3.20, they can be used to execute arbitrary commands on your server !
+
 Features
 --------
 
@@ -40,11 +42,19 @@ Requirements
 
 - Rails 3 or greater
 - gem Open4 pour l'execution des commandes
+- a file named : config/auth_password_admin.secret in your app :
+Containing the http authentication password needed for the commands controller
 
 Install
 -------
 
+- install the gem manually
 [sudo] gem install admin_tools_ennder
+Or
+- add id to your Gemfile
+- Create a file containing the http authentication password needed for the commands controller
+echo '<A PASSWORD>' >config/auth_password_admin.secret
+Change <A PASSWORD> for a reliable password.
 
 Author
 ------

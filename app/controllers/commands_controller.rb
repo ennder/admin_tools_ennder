@@ -1,10 +1,10 @@
 require "open4"
 
 class CommandsController < ApplicationController
-  if defined?(:before_action)
-    before_action( :authenticate, :except => [:index, :show, :new, :destroy] )
+  if respond_to?(:before_action)
+    before_action :authenticate_commands, except: [:index, :show, :new, :destroy]
   else
-    before_filter( :authenticate, :except => [:index, :show, :new, :destroy] )
+    before_filter :authenticate_commands, except: [:index, :show, :new, :destroy]
   end
 
   # GET /commands
@@ -103,9 +103,20 @@ class CommandsController < ApplicationController
 
 private
 
-  def authenticate
+  def authenticate_commands
     authenticate_or_request_with_http_basic do |name, password|
-      name == 'admin' && password == 'ttooume6969'
+      auth_password_admin = nil
+      begin
+        auth_password_admin = get_auth_password_admin
+      rescue Exception => e
+        Rails.logger.error "==>commands_controller #{e.message}"
+      end
+
+      if auth_password_admin
+        name == 'admin' && password == auth_password_admin
+      else
+        false
+      end
     end
   end
 
@@ -124,5 +135,18 @@ private
     params.require(:command).permit(
         :execute
       )
+  end
+
+  def get_auth_password_admin
+    auth_password_file = File.join(Rails.root.to_s, 'config', 'auth_password_admin.secret')
+
+    auth_password_admin = nil
+    if File.readable? auth_password_file
+      auth_password_admin = File.read(auth_password_file).chomp
+    else
+      raise "#{auth_password_file} not found or not readable, can't check http authentification password"
+    end
+
+    auth_password_admin
   end
 end
